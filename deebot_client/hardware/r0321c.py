@@ -68,7 +68,7 @@ from deebot_client.commands.json.ota import GetOta, SetOta
 from deebot_client.commands.json.play_sound import PlaySound
 from deebot_client.commands.json.pos import GetPos
 from deebot_client.commands.json.relocation import SetRelocationState
-from deebot_client.commands.json.station_state import GetStationState
+from deebot_client.commands.json.work_state import GetWorkState
 from deebot_client.commands.json.stats import GetStats, GetTotalStats
 from deebot_client.commands.json.sweep_mode import GetSweepMode, SetSweepMode
 from deebot_client.commands.json.true_detect import GetTrueDetect, SetTrueDetect
@@ -272,7 +272,7 @@ def get_device_info() -> StaticDeviceInfo:
                         auto_empty.Frequency.SMART,
                     ),
                 ),
-                state=CapabilityEvent(StationEvent, [GetStationState()]),
+                state=CapabilityEvent(StationEvent, [GetWorkState()]),
             ),
             stats=CapabilityStats(
                 clean=CapabilityEvent(StatsEvent, [GetStats()]),
